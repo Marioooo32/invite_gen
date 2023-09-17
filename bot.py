@@ -55,5 +55,5 @@ async def on_message(message):
             pass
 
 # Run the bot with your token
-bot_token = 'MTE1Mjg3MTAxNjE3MTgzNTQ3Mg.GBEDs9.Ewj9rgxXXBSmpMo8XcehTe0S3s-S8wCJ9UufXg'
+bot_token = 'YOUR_BOT_TOKEN'
 client.run(bot_token)
