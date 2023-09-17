@@ -18,14 +18,14 @@ allowed_role_name = "Owner"  # Change this to the actual role name
 
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'Good to go as {client.user}')
 
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('.generate'):
+    if message.content.startswith('.invite'):
         # Check if the user has the allowed role
         allowed_role = discord.utils.get(message.guild.roles, name=allowed_role_name)
         if allowed_role is None:
@@ -55,5 +55,5 @@ async def on_message(message):
             pass
 
 # Run the bot with your token
-bot_token = 'YOUR_BOT_TOKEN'
+bot_token = 'YOUR_BOT_TOKEN_HERE'
 client.run(bot_token)
