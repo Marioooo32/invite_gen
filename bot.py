@@ -1,3 +1,7 @@
+# Made with love by mario <3
+
+
+
 import discord
 import random
 import string
