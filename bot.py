@@ -1,7 +1,3 @@
-# Made with love by mario <3
-
-
-
 import discord
 import random
 import string
@@ -35,25 +31,23 @@ async def on_message(message):
         if allowed_role in message.author.roles:
             # Generate a random string of letters and numbers with length 45
             random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=45))
-            
+
             # Mention the user who executed the command and make the random string a spoiler
-            response = f'{message.author.mention}, invite code: ||{random_string}||'
-            
-            # Send the response
-            sent_message = await message.channel.send(response)
+            response = f'{message.author.mention}, here is your invite code: ||{random_string}||\n\n**Credits: Mario <3**'
+
+            # Send the response to the same text channel where the command was executed
+            response_message = await message.channel.send(response)
 
             # Wait for 15 seconds
             await asyncio.sleep(15)
 
-            # Delete the bot's message
-            await sent_message.delete()
-
-            # Delete the user's message
+            # Delete both the bot's response and the user's message
             await message.delete()
+            await response_message.delete()
         else:
             # Execute silently if the user does not have the role
             pass
 
 # Run the bot with your token
-bot_token = 'YOUR_BOT_TOKEN_HERE'
+bot_token = 'MTE1Mjg3MTAxNjE3MTgzNTQ3Mg.GvzYxD.yiVwTqNdv_qS1KiVg1VEGHdtA-CZ8QVn88RPv8'
 client.run(bot_token)
